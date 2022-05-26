@@ -28,6 +28,7 @@ public class Karatsuba {
 
     private static double getPow(double n) {
         return pow(10, floor(n / 2));
+
     }
 
     public static void main(String[] args) {
