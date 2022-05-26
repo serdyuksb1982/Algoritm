@@ -17,15 +17,7 @@ public class MainTest extends TestCase
 
     }
 
-    @Test
-    public void testQuicSort() {
-        System.out.println ("Quic sorting using array");
-        int[] array = {3,5,4,8,6,9,2,1,7};
-        int[] expResult = {1,2,3,4,5,6,7,8,9};
 
-        int[] result = Main.quicSort ( array,0, array.length - 1);
-        assertArrayEquals ( expResult,result );
-    }
 
     @Test
     public void testGetMaxElement() {
