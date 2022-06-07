@@ -44,9 +44,7 @@ public class QuickSort {
         for (int j = begin; j < end; j++) {
             if (arr[j] <= pivot) {
                 i++;
-                int swapTemp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = swapTemp;
+                swap_2(arr, i, j);
             }
         }
         int temp = arr[i + 1];
@@ -54,6 +52,12 @@ public class QuickSort {
         arr[end] = temp;
 
         return i + 1;
+    }
+
+    private static void swap_2(int[] arr, int i, int j) {
+        int swapTemp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = swapTemp;
     }
 
 
