@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * @author Serdyuk S.B.
+ * 
  */
 public class ShellSort {
 
