@@ -15,16 +15,16 @@ public class ShellSort {
     }
 
     private static void shellSort(int[] array) {
-        int middleElement = array.length / 2;
-        while (middleElement > 0) {
-            for (int i = 0; i < array.length - middleElement; i++) {
+        int mid = array.length / 2;
+        while (mid > 0) {
+            for (int i = 0; i < array.length - mid; i++) {
                 int j = i;
-                while (j >= 0 && (array[j] > array[j + middleElement])) {
-                    swap(array, middleElement, j);
+                while (j >= 0 && (array[j] > array[j + mid])) {
+                    swap(array, mid, j);
                     j--;
                 }
             }
-            middleElement /= 2;
+            mid /= 2;
         }
     }
 
