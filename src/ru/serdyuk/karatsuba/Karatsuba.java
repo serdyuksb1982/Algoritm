@@ -23,7 +23,7 @@ public class Karatsuba {
 
         long third = karatsubaSum((a + b), (c + d));
 
-        return (long) ((first * pow(10, floor( n / 2) * 2)) + ((third - second - first) * getPow(n)) + second);
+        return (long) ((first * getPow(n, 2)) + ((third - second - first) * getPow(n) ) + second);
     }
 
     private static double getPow(double n) {
@@ -31,8 +31,13 @@ public class Karatsuba {
 
     }
 
+    private static double getPow(double n, int a) {
+        return pow(10, floor(n / 2) * a);
+
+    }
+
     public static void main(String[] args) {
         System.out.println(karatsubaSum(1214, 3415));
-        System.out.println(1214*3415);
+        System.out.println(1214 * 3415);
     }
 }

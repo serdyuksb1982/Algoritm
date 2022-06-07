@@ -98,18 +98,18 @@ public class Main {
     }
 
     //binary search;
-    public static int binarySearch(int[] array, int first, int last, int item) {
+    public static int binarySearch(int[] array, int left, int rigth, int item) {
 
-        int middle = (first + last) / 2;
-        while ((array[middle] != item) && (first <= last)) {
+        int middle = (left + rigth) / 2;
+        while ((array[middle] != item) && (left <= rigth)) {
             if (array[middle] > item) {
-                last = middle - 1;
+                rigth = middle - 1;
             } else {
-                first = middle + 1;
+                left = middle + 1;
             }
-            middle = (first + last) / 2;
+            middle = (left + rigth) / 2;
         }
-        if(first <= last) {
+        if(left <= rigth) {
             System.out.printf ( "%d -> %d%n", item, ++middle );
         } else System.out.printf ("%s","Error");
         return middle;
