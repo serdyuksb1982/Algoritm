@@ -9,7 +9,7 @@ public class ShellSort {
 
     public static void main(String[] args) {
         int[] array = {9, 7, 4, 2, 8, 5, 1, 3, 0};
-        shellSort(array);
+        shellSortClassic(array);
         System.out.println(Arrays.toString(array));
     }
 
@@ -31,5 +31,18 @@ public class ShellSort {
         int temp = array[j];
         array[j] = array[j + middleElement];
         array[j + middleElement] = temp;
+    }
+
+    private static void shellSortClassic(int[] array) {
+        int n = array.length;
+        for (int step = n / 2; step > 0 ; step /= 2) {
+            for (int i = step; i < n; i++) {
+                for (int j = i - step; j >= 0 && array[j] > array[j + step]; j -= step) {
+                    int temp = array[j];
+                    array[j] = array[j + step];
+                    array[j + step] = temp;
+                }
+            }
+        }
     }
 }
