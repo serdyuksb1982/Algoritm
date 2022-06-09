@@ -10,6 +10,7 @@ import java.util.Arrays;
  * И в цикле проверять текущий элемент с отсортированными и ставить его перед меньшим.
  * O(N^2)
  * простанственная сложность О(N) + O(1)
+ * алгоритм устойчив
  */
 public class InsertionSort {
     public static void main(String[] args) {
