@@ -30,8 +30,41 @@ public class BubbleSort {
         array[i + 1] = temp;
     }
 
+    /** Такая реализация пузырьковой сортировки имеет временную сложность
+     *  n * n, так как два вложенных цикла проходят дважды по всему массиву данных
+     *
+     * **/
+    private static int[] bubbleSort(int[] src) {
+        for (int i = 0; i < src.length; i++) {
+            for (int j = 0; j < src.length - 1; j++) {
+                if (src[j] > src[j + 1]) {
+                    getTempElement(src, j);
+                }
+            }
+        }
+        return src;
+    }
+
+    /** У сортировки пузырьком в такой реализации сложность О(n * (n + 1) / 2),
+     *  те равна арифметической прогрессии, а не квадратичной сложности n * n
+     * **/
+    private static int[] bubbleSortVar(int[] src) {
+        boolean isSorted = false;
+        for (int i = 0; i < src.length && !isSorted; i++) {
+            isSorted = true;
+            for (int j = 0; j < src.length - (1 + i); j++) {
+                if (src[j] > src[j + 1]) {
+                    getTempElement(src, j);
+                    isSorted = false;
+                }
+            }
+        }
+        return src;
+    }
+
     public static void main(String[] args) {
         int[] array = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-        System.out.println(Arrays.toString(sort(array)));
+        System.out.println(Arrays.toString(bubbleSortVar(array)));
     }
 }
+/**  n (n + 1) / 2 = 10 (10 + 1) / 2 = 55  **/
