@@ -17,14 +17,14 @@ public class BubbleSort {
             for (int i = 0; i < array.length - 1; i++) {
                 if(array[i] > array[i + 1]) {
                     isSorted = false;
-                    getTempElement(array, i);
+                    swap(array, i);
                 }
             }
         }
         return array;
     }
 
-    private static void getTempElement(int[] array, int i) {
+    private static void swap(int[] array, int i) {
         int temp = array[i];
         array[i] = array[i + 1];
         array[i + 1] = temp;
@@ -32,13 +32,12 @@ public class BubbleSort {
 
     /** Такая реализация пузырьковой сортировки имеет временную сложность
      *  n * n, так как два вложенных цикла проходят дважды по всему массиву данных
-     *
-     * **/
+     **/
     private static int[] bubbleSort(int[] src) {
         for (int i = 0; i < src.length; i++) {
             for (int j = 0; j < src.length - 1; j++) {
                 if (src[j] > src[j + 1]) {
-                    getTempElement(src, j);
+                    swap(src, j);
                 }
             }
         }
@@ -54,7 +53,7 @@ public class BubbleSort {
             isSorted = true;
             for (int j = 0; j < src.length - (1 + i); j++) {
                 if (src[j] > src[j + 1]) {
-                    getTempElement(src, j);
+                    swap(src, j);
                     isSorted = false;
                 }
             }
