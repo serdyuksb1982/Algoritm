@@ -47,5 +47,16 @@ public class InsertionSort {
         }
     }
 
-
+    private static int[] insSort(int[] src) {
+        for (int i = 1; i < src.length; i++) {
+            for (int j = i; j >= 1; j--) {
+                if (src[j] < src[j - 1]) {
+                    int temp = src[j];
+                    src[j] = src[j - 1];
+                    src[j - 1] = temp;
+                }else break;
+            }
+        }
+        return src;
+    }
 }
